@@ -23,7 +23,7 @@ Button btnAddExpense;
 Intent i;
 
     private static JSONParser jParser = new JSONParser();
-    private static String urlHost = "http://192.168.254.105/ExpenseTracker/AddExpense.php";
+    private static String urlHost = "http://192.168.254.106/ExpenseTracker/AddExpense.php";
     private static String TAG_MESSAGE = "message", TAG_SUCCESS = "success";
     private static String online_dataset = "";
     private static String expenseAmount = "";
@@ -49,7 +49,6 @@ Intent i;
                 new uploadDataToURL().execute();
 
                 i.putExtra(MainActivity.EXPAMTM, expenseAmount);
-
 
                 startActivity(i);
                 finish();
@@ -79,7 +78,7 @@ Intent i;
             int nSuccess;
             try {
                 ContentValues cv = new ContentValues();
-                //insert anything in this code
+
                 cPostSQL = " '" + expenseAmount + "' , '" + description + "' ";
                 cv.put("code", cPostSQL);
 

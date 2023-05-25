@@ -24,13 +24,12 @@ TextView tvBudget;
 Intent i;
 
     private static JSONParser jParser = new JSONParser();
-    private static String urlHost = "http://192.168.254.105/ExpenseTracker/AddBudget.php";
+    private static String urlHost = "http://192.168.254.106/ExpenseTracker/AddBudget.php";
     private static String TAG_MESSAGE = "message", TAG_SUCCESS = "success";
     private static String online_dataset = "";
     private static String budgetamt = "";
     private static String budgetdesc = "";
 
-    private String bgtaydi,bgtamt,expaydi, expamt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,8 +52,6 @@ Intent i;
 
                 new uploadDataToURL().execute();
                 i.putExtra(MainActivity.BGTAMTM, budgetamt);
-                i.putExtra(MainActivity.BGTIDM, bgtaydi);
-
 
                 startActivity(i);
                 finish();

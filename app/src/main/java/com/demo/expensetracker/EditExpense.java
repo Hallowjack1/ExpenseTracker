@@ -22,7 +22,7 @@ Button btnEditExpense;
     private static EditText Amount,Description;
     private static String cItemcode = "";
     private static JSONParser jParser = new JSONParser();
-    private static String urlHost = "http://192.168.254.105/ExpenseTracker/UpdateExpense.php";
+    private static String urlHost = "http://192.168.254.106/ExpenseTracker/UpdateExpense.php";
     private static String TAG_MESSAGE = "message" , TAG_SUCCESS = "success";
     private static String online_dataset = "";
     public static String String_isempty = "";
@@ -89,7 +89,6 @@ Button btnEditExpense;
             int nSuccess;
             try {
                 ContentValues cv = new ContentValues();
-                //insert anything in this cod
 
                 cPostSQL = expaydi;
                 cv.put("id", cPostSQL);

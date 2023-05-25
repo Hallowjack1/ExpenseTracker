@@ -43,12 +43,10 @@ public class MainActivity extends AppCompatActivity {
     Button budgetAct, expenseAct;
 
     public static final String BGTAMTM = "BGTAMTM";
-    public static final String BGTIDM = "BGTIDM";
 
     public static final String EXPAMTM = "EXPAMTM";
-    public static final String EXPIDM = "EXPIDM";
 
-    private String bgtaydi,bgtamt,expaydi, expamt;
+    private String bgtamt, expamt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

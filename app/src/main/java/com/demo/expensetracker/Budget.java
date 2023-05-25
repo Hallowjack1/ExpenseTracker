@@ -35,11 +35,11 @@ public class Budget extends AppCompatActivity {
     TextView textView, txtDefault_BudgetAmount, txtDefault_BudgetDesc, txtDefault_BudgetID;
     private static EditText edtitemcode;
     private static JSONParser jParser = new JSONParser();
-    private static String urlHostDelete = "http://192.168.254.105/ExpenseTracker/DeleteBudget.php";
-    private static String urlHostBudgetAmount = "http://192.168.254.105/ExpenseTracker/SelectBudgetAmount.php";
-    private static String urlHostBudgetAmountDesc = "http://192.168.254.105/ExpenseTracker/SelectBudgetAmountDesc.php";
-    private static String urlHostBudgetDesc = "http://192.168.254.105/ExpenseTracker/SelectBudgetDescription.php";
-    private static String urlHostBudgetID = "http://192.168.254.105/ExpenseTracker/SelectBudgetID.php";
+    private static String urlHostDelete = "http://192.168.254.106/ExpenseTracker/DeleteBudget.php";
+    private static String urlHostBudgetAmount = "http://192.168.254.106/ExpenseTracker/SelectBudgetAmount.php";
+    private static String urlHostBudgetAmountDesc = "http://192.168.254.106/ExpenseTracker/SelectBudgetAmountDesc.php";
+    private static String urlHostBudgetDesc = "http://192.168.254.106/ExpenseTracker/SelectBudgetDescription.php";
+    private static String urlHostBudgetID = "http://192.168.254.106/ExpenseTracker/SelectBudgetID.php";
     private static String TAG_MESSAGE = "message", TAG_SUCCESS = "success";
     private static String online_dataset = "";
     private static String cItemcode = "";
