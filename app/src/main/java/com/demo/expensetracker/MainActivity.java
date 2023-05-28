@@ -42,11 +42,6 @@ public class MainActivity extends AppCompatActivity {
     TextView Dashboard, tvBudget, tvExpense, tvRemainingBudget;
     Button budgetAct, expenseAct;
 
-    public static final String BGTAMTM = "BGTAMTM";
-
-    public static final String EXPAMTM = "EXPAMTM";
-
-    private String bgtamt, expamt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

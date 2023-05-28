@@ -48,8 +48,6 @@ Intent i;
 
                 new uploadDataToURL().execute();
 
-                i.putExtra(MainActivity.EXPAMTM, expenseAmount);
-
                 startActivity(i);
                 finish();
             }

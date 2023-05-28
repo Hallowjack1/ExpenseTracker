@@ -61,8 +61,6 @@ public class EditBudget extends AppCompatActivity {
 
                 Intent i = new Intent(EditBudget.this, MainActivity.class);
 
-                i.putExtra(MainActivity.BGTAMTM, BudgetAmount);
-
                 startActivity(i);
                 finish();
             }

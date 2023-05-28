@@ -47,11 +47,9 @@ Intent i;
                 budgetamt = inputBudget.getText().toString().trim();
                 budgetdesc = BudgetDesc.getText().toString().trim();
 
-
                 i = new Intent(AddBudget.this, MainActivity.class);
 
                 new uploadDataToURL().execute();
-                i.putExtra(MainActivity.BGTAMTM, budgetamt);
 
                 startActivity(i);
                 finish();

@@ -61,8 +61,6 @@ Button btnEditExpense;
 
                 Intent i = new Intent(EditExpense.this, MainActivity.class);
 
-                i.putExtra(MainActivity.EXPAMTM, ExpenseAmount);
-
                 startActivity(i);
                 finish();
             }
