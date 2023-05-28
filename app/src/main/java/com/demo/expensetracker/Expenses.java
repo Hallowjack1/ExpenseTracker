@@ -35,11 +35,11 @@ public class Expenses extends AppCompatActivity {
     TextView textView, txtDefault_ExpenseAmount, txtDefault_ExpenseDesc, txtDefault_ExpenseID;
     private static EditText edtitemcode;
     private static JSONParser jParser = new JSONParser();
-    private static String urlHostDelete = "http://192.168.254.106/ExpenseTracker/DeleteExpense.php";
-    private static String urlHostExpenseAmount = "http://192.168.254.106/ExpenseTracker/SelectExpenseAmount.php";
-    private static String urlHostExpenseAmountDesc = "http://192.168.254.106/ExpenseTracker/SelectExpenseAmountDesc.php";
-    private static String urlHostExpenseDesc = "http://192.168.254.106/ExpenseTracker/SelectExpenseDescription.php";
-    private static String urlHostExpenseID = "http://192.168.254.106/ExpenseTracker/SelectExpenseID.php";
+    private static String urlHostDelete = "http://192.168.254.104/ExpenseTracker/DeleteExpense.php";
+    private static String urlHostExpenseAmount = "http://192.168.254.104/ExpenseTracker/SelectExpenseAmount.php";
+    private static String urlHostExpenseAmountDesc = "http://192.168.254.104/ExpenseTracker/SelectExpenseAmountDesc.php";
+    private static String urlHostExpenseDesc = "http://192.168.254.104/ExpenseTracker/SelectExpenseDescription.php";
+    private static String urlHostExpenseID = "http://192.168.254.104/ExpenseTracker/SelectExpenseID.php";
     private static String TAG_MESSAGE = "message", TAG_SUCCESS = "success";
     private static String online_dataset = "";
     private static String cItemcode = "";

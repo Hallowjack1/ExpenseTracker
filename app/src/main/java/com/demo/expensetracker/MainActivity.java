@@ -39,7 +39,7 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
-    TextView Dashboard, tvBudget, tvExpense;
+    TextView Dashboard, tvBudget, tvExpense, tvRemainingBudget;
     Button budgetAct, expenseAct;
 
     public static final String BGTAMTM = "BGTAMTM";
@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         expenseAct = findViewById(R.id.btnExpenseAct);
         tvBudget = findViewById(R.id.tv_budget);
         tvExpense = findViewById(R.id.tv_expense);
+        tvRemainingBudget = findViewById(R.id.tvRemainingBudget);
 
         sharedPreferences = getSharedPreferences("Userinfo", 0);
         String sname = sharedPreferences.getString("name", "");
@@ -66,16 +67,87 @@ public class MainActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         assert actionBar != null;
 
+        //Budget Total
+        RequestQueue queue = Volley.newRequestQueue(this);
+        String budgeturl ="http://192.168.254.104/ExpenseTracker/BudgetTotal.php";
 
-        Intent i = getIntent();
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, budgeturl,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
 
-        bgtamt = i.getStringExtra(BGTAMTM);
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            int totalBudget = jsonObject.getInt("totalBudget");
 
-        expamt = i.getStringExtra(EXPAMTM);
+                            tvBudget.setText("₱ " + totalBudget);
 
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                tvBudget.setText("That didn't work!");
+            }
+        });
 
-        tvBudget.setText("₱ " + bgtamt);
-        tvExpense.setText("₱ " + expamt);
+        queue.add(stringRequest);
+
+        //Expense Total
+        String expenseurl ="http://192.168.254.104/ExpenseTracker/ExpenseTotal.php";
+
+        stringRequest = new StringRequest(Request.Method.GET, expenseurl,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            int totalExpense = jsonObject.getInt("totalExpense");
+
+                            tvExpense.setText("₱ " + totalExpense);
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                tvExpense.setText("That didn't work!");
+            }
+        });
+
+        queue.add(stringRequest);
+
+        //Remaining Budget
+        String remainingbudgeturl ="http://192.168.254.104/ExpenseTracker/RemainingBudget.php";
+
+        stringRequest = new StringRequest(Request.Method.GET, remainingbudgeturl,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            int remainingBudget = jsonObject.getInt("result");
+
+                            tvRemainingBudget.setText("₱ " + remainingBudget);
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                tvRemainingBudget.setText("That didn't work!");
+            }
+        });
+
+        queue.add(stringRequest);
 
         budgetAct.setOnClickListener(new View.OnClickListener() {
             @Override

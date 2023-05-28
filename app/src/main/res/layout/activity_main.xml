@@ -24,11 +24,25 @@
 
 
             <TextView
+                android:id="@+id/textView2"
+                android:layout_width="323dp"
+                android:layout_height="120dp"
+                android:background="#576CBC"
+                android:padding="5dp"
+                android:text="Remaining Budget"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="34sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDashboard" />
+
+            <TextView
                 android:id="@+id/tvDashboard"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="323dp"
+                android:layout_height="61dp"
                 android:layout_margin="40dp"
-                android:layout_marginTop="90dp"
+                android:layout_marginTop="40dp"
                 android:background="#576CBC"
                 android:padding="5dp"
                 android:text="Dashboard"
@@ -36,15 +50,15 @@
                 android:textColor="#FFFFFF"
                 android:textSize="34sp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.493"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
 
             <LinearLayout
                 android:id="@+id/linearLayout2"
                 android:layout_width="0dp"
                 android:layout_height="139dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="36dp"
                 android:layout_weight="1"
                 android:background="#576CBC"
                 android:gravity="center"
@@ -52,7 +66,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvDashboard">
+                app:layout_constraintTop_toBottomOf="@+id/tvRemainingBudget">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -88,7 +102,7 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.671">
+                app:layout_constraintVertical_bias="0.813">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -132,6 +146,19 @@
                 app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+            <TextView
+                android:id="@+id/tvRemainingBudget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="₱ 0.00"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="34sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

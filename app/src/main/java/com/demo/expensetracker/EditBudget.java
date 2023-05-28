@@ -22,7 +22,7 @@ public class EditBudget extends AppCompatActivity {
     private static EditText Amount,Description;
     private static String cItemcode = "";
     private static JSONParser jParser = new JSONParser();
-    private static String urlHost = "http://192.168.254.106/ExpenseTracker/UpdateBudget.php";
+    private static String urlHost = "http://192.168.254.104/ExpenseTracker/UpdateBudget.php";
     private static String TAG_MESSAGE = "message" , TAG_SUCCESS = "success";
     private static String online_dataset = "";
     public static String String_isempty = "";
