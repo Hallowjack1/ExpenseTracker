@@ -24,7 +24,7 @@ TextView tvBudget;
 Intent i;
 
     private static JSONParser jParser = new JSONParser();
-    private static String urlHost = "http://192.168.254.104/ExpenseTracker/AddBudget.php";
+    private static String urlHost = "http://192.168.254.105/ExpenseTracker/AddBudget.php";
     private static String TAG_MESSAGE = "message", TAG_SUCCESS = "success";
     private static String online_dataset = "";
     private static String budgetamt = "";

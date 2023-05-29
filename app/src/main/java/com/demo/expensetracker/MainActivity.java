@@ -55,6 +55,10 @@ public class MainActivity extends AppCompatActivity {
         tvExpense = findViewById(R.id.tv_expense);
         tvRemainingBudget = findViewById(R.id.tvRemainingBudget);
 
+        String budgeturl ="http://192.168.254.105/ExpenseTracker/BudgetTotal.php";
+        String expenseurl ="http://192.168.254.105/ExpenseTracker/ExpenseTotal.php";
+        String remainingbudgeturl ="http://192.168.254.105/ExpenseTracker/RemainingBudget.php";
+
         sharedPreferences = getSharedPreferences("Userinfo", 0);
         String sname = sharedPreferences.getString("name", "");
         Dashboard.setText(sname + "'s Dashboard");
@@ -62,9 +66,9 @@ public class MainActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         assert actionBar != null;
 
+
         //Budget Total
         RequestQueue queue = Volley.newRequestQueue(this);
-        String budgeturl ="http://192.168.254.104/ExpenseTracker/BudgetTotal.php";
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, budgeturl,
                 new Response.Listener<String>() {
@@ -84,15 +88,14 @@ public class MainActivity extends AppCompatActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                tvBudget.setText("That didn't work!");
+                tvBudget.setText("Error");
             }
         });
 
         queue.add(stringRequest);
 
-        //Expense Total
-        String expenseurl ="http://192.168.254.104/ExpenseTracker/ExpenseTotal.php";
 
+        //Expense Total
         stringRequest = new StringRequest(Request.Method.GET, expenseurl,
                 new Response.Listener<String>() {
                     @Override
@@ -111,15 +114,14 @@ public class MainActivity extends AppCompatActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                tvExpense.setText("That didn't work!");
+                tvExpense.setText("Error");
             }
         });
 
         queue.add(stringRequest);
 
-        //Remaining Budget
-        String remainingbudgeturl ="http://192.168.254.104/ExpenseTracker/RemainingBudget.php";
 
+        //Remaining Budget
         stringRequest = new StringRequest(Request.Method.GET, remainingbudgeturl,
                 new Response.Listener<String>() {
                     @Override
@@ -138,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                tvRemainingBudget.setText("That didn't work!");
+                tvRemainingBudget.setText("Error");
             }
         });
 
